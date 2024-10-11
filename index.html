@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SOLO WEB</title>
+	<link rel="icon" type="image/x-icon" href="images/SOLOWEBCIRCLE.png"> 
+	
+	<link rel="stylesheet" type="text/css" href="salman.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/fluid-canvas@latest"></script>
+
+</head>
+<body>
+
+
+
+		<div class="chotu-4"></div>
+		<div class="chotu-5"></div>
+		<div class="chotu-6"></div>
+
+
+
+
+
+
+	<div id="preloader">
+
+	</div>
+
+
+
+
+	<div class="cursor-dot" data-cursor-dot></div>
+	<div class="cursor-outline" data-cursor-outline></div>
+	<script>
+		const cursorDot = document.querySelector("[data-cursor-dot]");
+		const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+		window.addEventListener("mousemove", function (e){
+			const posX = e.clientX;
+			const posY = e.clientY;
+
+			cursorDot.style.left = `${posX}px`;
+			cursorDot.style.top = `${posY}px`;
+
+
+			cursorOutline.animate({
+				left: `${posX}px`, 
+				top: `${posY}px`
+			}, {duration: 500, fill: "forwards" });
+
+
+		})
+	</script>
+
+
+	<div class="header container-fluid">
+		<div class="">
+		<div class="nav">
+			<div class="logo col-md-3">
+				<img src="images/SOLOWEBCIRCLE.png">
+			</div>
+			<div class="list col-md-9">
+				<label>
+					<input type="checkbox">
+					<span class="menu"> <span class="hamburger"></span> </span>
+				<ul>
+					<a href=""></a>
+					<a href="#START"><li class="one">START</li></a>
+					<a href="#CHALLENGE"><li class="two">CHALLENGE</li></a>
+					
+					<a href="#WORK"><li class="three">MY WORK</li></a>
+
+					<a href="#MAGIC"><li class="four">MAGIC</li></a>
+
+					<a href="#CONTACT"><li class="five">CONTACT ME</li></a>
+
+
+					<!-- <li class="one">
+						<a href="#START">START</a></li>
+					<li class="two">
+						<a href="#CHALLENGE">CHALLENGE</a></li>
+					<li class="three">
+						<a href="#WORK">MY WORK</a></li>
+					<li class="four">
+						<a href="#MAGIC">MAGIC</a></li>
+					<li class="five">
+						<a href="#CONTACT">CONTACT ME</a></li> -->
+				</ul>
+				</label>
+			</div>
+		</div>
+		</div>
+
+
+
+		<div class="line line-header">
+			<div class="light light-header" style="left: 0%;"></div>
+			<div class="light light-header" style="left: 33.33%;"></div>
+			<div class="light light-header" style="left: 66.66%;"></div>
+		  </div>
+
+
+	</div>
+
+
+	
+
+
+	<div class="main-1 container-fluid" id="START">
+		<div class="chotu"></div>
+		<div class="chotu-2"></div>
+		<div class="chotu-3"></div>
+		<!-- <div class="chotu-4"></div> -->
+		<div class="main-1-h1"><h1>Hi my name is <span class="name-color-change">SYED MUHAMMAD SALMAN NAQVI</span></h1>
+			<h1>I develop <span id="auto-type"></span></h1></div>
+
+			<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+			<!-- Setup and start animation! -->
+			<script>
+			  var typed = new Typed('#auto-type', {
+				strings: ['<i>Dynamic</i> Websites', 'Motions', 'Animations', '&amp; Things...'],
+				typeSpeed: 100,
+				backSpeed: 30,
+				loop: true,
+			  });
+			</script>
+
+
+
+		<div class="row possition-absolute" >
+		<div class="picture reveal col-md-6">
+		<img class="pic7" src="images/pic-7.jpg">
+		</div>
+		<div class="picture-2 reveal col-md-6">
+			<!-- <div class="loading-2"> -->
+			<img class="pic5" src="images/mypic.jpg">
+			<!-- </div> -->
+		</div>
+		</div>
+	</div>
+
+
+
+	<div class="main-2 container-fluid">
+		<div class="name reveal">
+			<div class="namewords">
+				<h1>I also enjoy capturing</h1>
+				<h2 data-tilt>Heartwarming Moments</h2>
+			</div>
+		</div>
+		<div class="pictures reveal">
+			<div class="picture-11" data-tilt><img class="picture-1" src="images/pic-1.jpg"><h1>Keep the smile on!</h1></div>
+			<div class="picture-11 picture2" data-tilt><img class="picture-1" src="images/pic-8.jpg"><h1>Do more of what makes you happy.</h1></div>
+			<div class="picture-11 picture2" data-tilt><img class="picture-1" src="images/pic-6.jpg"><h1>Be brave enough to live differently.</h1></div>
+			<div class="picture-11 picture2" data-tilt><img class="picture-1" src="images/pic-4.jpg"><h1>Follow your dreams.</h1></div>
+			<div class="picture-11 picture3" data-tilt><img class="picture-1" src="images/pic-3.jpg"><h1>You will either find a way or make one.</h1></div>
+		</div>
+	</div>
+	
+	<div class="main-3" id="CHALLENGE">
+		<div class="bakwas-challenge reveal"><h1>Challenge Yourself</h1><p>Make their rotation perfectly same <i class="fa-solid fa-face-grin-squint"></i></p></div>
+		<!-- <div class="all-bakwas"> -->
+
+
+		<a href="https://medium.com/@smsalman862/harry-potter-and-the-philosophers-stone-29032db64a10">	
+			<div class="bakwas reveal">
+				<h1>Harry Potter and the Philosopher’s Stone
+				<br>
+				(CLICK & READ BLOG ON MEADIUM)
+				</h1>
+			</div>
+		</a>
+
+		<a href="https://medium.com/@smsalman862/navigating-the-world-of-website-development-frameworks-for-beginners-d9f0a3d2873d">
+		<div class="bakwas-2 reveal">
+			<h1>Navigating the World of Website Development Frameworks for Beginners
+				<br>
+				(CLICK & READ BLOG ON MEADIUM)
+				</h1>
+		</div>
+		</a>
+
+		<a href="https://medium.com/@smsalman862/suggestions-for-becoming-a-website-developer-coder-3ecaab5a01e0">
+		<div class="bakwas-3 reveal">
+			<h1>Suggestions for beginner Website Developers & coders
+				<br>
+				(CLICK & READ BLOG ON MEADIUM)
+				</h1>
+		</div>
+		</a>
+
+		<a href="https://medium.com/@smsalman862/when-a-crisis-hits-should-we-take-a-stand-or-remain-neutral-34dbefafc75f">
+		<div class="bakwas-4 reveal">
+			<h1>When a crisis hits, should we take a stand or remain neutral?
+				<br>
+				(CLICK & READ BLOG ON MEADIUM)
+				</h1>
+			
+		</div>	
+		</a>
+
+	<!-- </div> -->
+	</div>
+
+
+	<div class="line">
+        <div class="light" style="left: 0%;"></div>
+        <div class="light" style="left: 33.33%;"></div>
+        <div class="light" style="left: 66.66%;"></div>
+      </div>
+      <div>
+      </div>
+	
+	  <script>
+		function setAnimationDuration(duration) {
+	const lights = document.querySelectorAll('.light');
+	lights.forEach(light => {
+	  light.style.animationDuration = `${duration}s`;
+	});
+  }
+	  </script>
+
+
+
+	<div class="main-4" id="WORK">
+		<div class="carddflex-1 reveal">
+		<a class="linkk" href="#SHOTPIC">
+			<div class="cardd-1" data-tilt>&times;
+			<h1>These are some of my great projects <hr></h1>
+		
+			</div>
+		</a>
+		<a class="linkk" href="#SHOTPIC">
+			<div class="cardd-2" data-tilt>
+				<h1>These are some of my great projects <hr></h1>
+
+			</div>
+		</a>
+	</div>
+	<div class="carddflex-2 reveal">
+		<a class="linkk" href="#SHOTPIC">
+			<div class="cardd-3" data-tilt>
+				<h1>These are some of my great projects <hr></h1>
+
+			</div>
+		</a>
+		<a class="linkk" href="#SHOTPIC">
+			<div class="cardd-4" data-tilt>
+				<h1>These are some of my great projects <hr></h1>
+			</div>
+		</a>
+	</div>		
+	</div>
+
+
+
+	
+
+
+
+
+
+	<div class="main-5" id="SHOTPIC">
+		<div>
+			<h1 class="snapshot-h1 reveal">Snap shots of my projects</h1>
+			<div class="images reveal">&times;
+				<img src="images/web-1-ss.png" alt="" width="250" height="500">
+				  <img src="images/web-2-ss.png" alt="" width="250" height="500">
+				  <img src="images/web-3-ss.png" alt="" width="250" height="500">
+				</div>
+
+
+				<div class="images reveal images-section-2">&times;
+					<img src="images/web-4-ss.png" alt="" width="250" height="500">
+					  <img src="images/web-5-ss.png" alt="" width="250" height="500">
+					  <img src="images/web-6-ss.png" alt="" width="250" height="500">
+					</div>
+				
+				<div id="image-viewer">
+				  <span class="close">&times;</span>
+				  <img class="modal-content" id="full-image">
+				</div>
+		
+		
+		
+				<script>
+					
+				$(".images img").click(function(){
+					$("#full-image").attr("src", $(this).attr("src"));
+					$('#image-viewer').show();
+				  });
+				  
+				  $("#image-viewer .close").click(function(){
+					$('#image-viewer').hide();
+				  });
+		
+				  </script>		
+
+		</div>
+	</div>
+
+
+
+
+	<div class="footer" id="MAGIC">
+		<a href="#"></a>
+		<div>
+			<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+			<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+			<div class='experience'>
+				<div class="extraBox"><h1>Click & move your mouse on black screen</h1></div>
+				<div class='experience-show'>
+				  <h1 class='experience-top'>Let Me show you</h1>
+				  <div class='experience-middle-container'>
+				  <h1 class='experience-middle'>Do you want to see some magic ?</h1>
+				  </div>
+				  <h1 class='experience-bottom'>My Magic Trick</h1>
+				  <div class='spacer-end'></div>
+				</div>
+			  </div>
+		  <section class="black-background">
+	
+				<script src="https://cdn.jsdelivr.net/npm/fluid-canvas@latest"></script>
+
+				<canvas id="renderSurface"></canvas>
+			
+				<script>
+					const canvas = document.getElementById('renderSurface');
+					let myFluid = new Fluid(canvas);
+					myFluid.activate();
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/fluid-canvas@latest"></script>
+
+		  </section>
+
+
+
+
+		  <script>
+			const exp = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".experience",
+    start: "top top",
+    end: "+=4000",
+    scrub: true,
+    // markers: true,
+    pin: ".experience"
+	
+	
+  }
+});
+
+exp.to(".experience-middle", {
+  "--progress1": 1,
+  ease: "none",
+  smoothOrigin: true,
+  behavior: 'smooth'
+
+
+
+});
+exp.from(
+  ".extraBox",
+  {
+    scaleX: 0,
+    ease: "none"
+	
+  },
+  "-=0.4"
+);
+
+		  </script>
+		
+			
+			 
+		</div>
+
+
+		<div class="footer-foot" id="CONTACT">
+			<h1 class="reveal">Contact / >.</h1>
+			<div class="footflex reveal">
+				<div class="footicon1">
+					<h2 class="sidefooth2">Find me on:</h2>
+					<a href="https://www.facebook.com/profile.php?id=100007216749479"><i class="fa-brands fa-facebook-f" id="Ione"><span class="fontname">Syed Muhammad Salman Naqvi</span></i></a>
+					<a href="https://wa.me/qr/5YMDYU6JUPZLL1"><i class="fa-brands fa-whatsapp" id="Itwo"><span class="fontname">Syed Muhammad Salman Naqvi</span></i></a>
+				</div>
+
+				<div class="footicon2">
+					<a href="https://www.linkedin.com/in/muhammad-salman-9b48aa232"><i class="fa-brands fa-linkedin-in" id="Ione"><span class="fontname">Muhammad Salman</span></i></a>
+					<a href="https://www.instagram.com/s.a.l.m.a.n_n.a.q.v.i?igsh=a3VyMGVnbHBoaW5s"><i class="fa-brands fa-instagram" id="Itwo"><span class="fontname">s.a.l.m.a.n_n.a.q.v.i</span></i></a>
+				</div>
+
+				<div class="footicon3">
+					
+					<form>
+						<input class="inputname" type="text" placeholder="Name"/>
+						<br/>
+						<input class="inputname2" type="email" placeholder="Email"/>
+						<br/>
+						<button type="submit">Send</button>
+					</form>
+				</div>
+			 </div>
+
+			<div class="funfoot">
+
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+				<div class="vl"></div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript">
+		window.addEventListener('scroll', reveal);
+
+		function reveal(){
+			var reveals = document.querySelectorAll('.reveal');
+
+			for(var i = 0; i < reveals.length; i++){
+
+				var windowheight = window.innerHeight;
+				var revealtop = reveals[i].getBoundingClientRect().top;
+				var revealpoint = 150;
+
+				if (revealtop < windowheight - revealpoint){
+					reveals[i].classList.add('active');
+				}
+				else{
+					reveals[i].classList.remove('active');
+				}
+			}
+		}
+
+
+	</script>
+	
+
+
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+<script>
+	var loader = document.getElementById("preloader");
+	window.addEventListener("load", function(){
+		loader.style.display = "none";
+	})
+</script>
+
+
+</body>
+
+</html>
