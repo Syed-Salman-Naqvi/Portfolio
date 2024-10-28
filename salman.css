@@ -30,7 +30,7 @@ body {
 
 li{
 	float: left;
-	padding-left: 10px;
+	/* padding-left: 10px; */
 	padding-right: 10px;
 	padding-top: 25px;
 	list-style: none; 
@@ -74,14 +74,21 @@ li:hover{
 ul{
 	width: 100%;
 	/* margin-right: 50px !important; */
-	margin-left: -40px !important;
+	/* margin-left: -40px !important; */
 	justify-content: center !important;
 	text-align: center !important;
 	align-items: center !important;
+	/* position: absolute; */
+	/* margin: auto; */
+
 }
 
-label ul{
+label{
 	/* margin-right: 40px !important; */
+	/* width: 100%;
+	justify-content: center; */
+	/* text-align: center !important;
+	align-items: center !important; */
 }
 .hamburger{
 	margin-top: 20px;
@@ -89,6 +96,7 @@ label ul{
 
 .list{
 	width: 90% !important;
+	/* justify-content: center; */
 }
 .header{
 	background-color: #212121;
@@ -1467,9 +1475,7 @@ body{
 	100%{
 		transform: rotate(0deg);
 	}
-} */
-
-
+} */	
 .footicon3{
 	margin-top: 100px;
 }
@@ -1621,13 +1627,16 @@ label input:checked + .menu + ul { opacity: 1; }
 label ul {
   z-index: 200;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 33%;
+  margin-left: auto !important;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
   -webkit-transition: .25s 0s ease-in-out;
   transition: .25s 0s ease-in-out;
+  width: auto;
+  display: flex;
 }
 
 label a {
