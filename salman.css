@@ -1689,9 +1689,9 @@ label a {
 	.header ul{
 		margin: 0% !important;
 		padding: 0% !important;
-		margin-left: 50px !important;
+		margin-left: 90px !important;
 		width: 90% !important;
-		margin-top: -40px !important;
+		margin-top: -30px !important;
 		
 	}
 	.list{
@@ -1826,7 +1826,7 @@ label a {
 	}
 	.main-4{
 		width: 500px;
-		height: 900px;
+		height: 950px;
 		padding-top: 100px;
 		
 	}
@@ -2019,7 +2019,7 @@ label a {
 		margin-top: -200px !important;
 	}
 	.footer-foot{
-		height: 640px;
+		height: 580px;
 	}
 	.main-3 a{
 		/* display: none !important; */
