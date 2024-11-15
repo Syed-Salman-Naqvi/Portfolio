@@ -2212,7 +2212,7 @@ label a {
     transform: translateZ(calc(var(--size) * -.2));
   }
   
-  :root * {
+  :root * .cube{
     /* Pause the animation */
     /* animation-play-state: paused; */
     /* Bind the animation to scroll */
