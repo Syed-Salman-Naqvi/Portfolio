@@ -1,5 +1,5 @@
-import MagicCanvas from "./components/MagicCanvas";
 import SiteNav from "./components/SiteNav";
+import MouseMagic from "./components/MouseMagic";
 import ProjectLightbox from "./components/ProjectLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
@@ -43,6 +43,7 @@ export default function Home() {
   return (
     <main>
       <SiteNav />
+      <MouseMagic />
 
       <section className="hero" id="start">
         <div className="hero-grid" />
@@ -189,17 +190,6 @@ export default function Home() {
           <p>Click any screenshot to open the full project view.</p>
         </div>
         <ProjectLightbox images={snapshots} base={IMG} />
-      </section>
-
-      <section className="magic" id="magic">
-        <div className="magic-grid" />
-        <div className="magic-content">
-          <p className="eyebrow">INTERACTIVE SPACE / 06</p>
-          <h2>Want to see some <em>magic?</em></h2>
-          <p>Move your cursor across the canvas. A lightweight interactive experience inspired by the original fluid-art section.</p>
-          <span className="magic-hint">MOVE YOUR CURSOR <i>✦</i></span>
-        </div>
-        <MagicCanvas />
       </section>
 
       <footer className="footer" id="contact">
