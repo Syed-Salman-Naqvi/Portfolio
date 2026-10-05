@@ -33,9 +33,8 @@ export default function SiteNav() {
       </button>
 
       <nav aria-label="Main navigation">
-        {links.map(([label, href], index) => (
+        {links.map(([label, href]) => (
           <a key={label} href={href} onClick={() => setOpen(false)}>
-            <small>0{index + 1}</small>
             {label}
           </a>
         ))}
