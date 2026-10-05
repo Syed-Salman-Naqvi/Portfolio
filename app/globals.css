@@ -242,7 +242,8 @@ h1,h2,h3,p{overflow-wrap:break-word}
 
 /* GLOBAL MOUSE MAGIC */
 main{position:relative;isolation:isolate}
-main > *:not(.mouse-magic){position:relative;z-index:1}
+main > *:not(.mouse-magic):not(.site-header){position:relative;z-index:1}
+.site-header{position:fixed!important;z-index:50!important}
 .mouse-magic{
   position:fixed;
   inset:0;
