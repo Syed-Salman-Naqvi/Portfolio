@@ -39,7 +39,18 @@ export default function ProjectLightbox({ images, base }: Props) {
 
       {active !== null && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Project screenshot viewer" onClick={() => setActive(null)}>
-          <button className="lightbox-close" type="button" onClick={() => setActive(null)} aria-label="Close">×</button>
+          <button
+            className="lightbox-close"
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setActive(null);
+            }}
+            aria-label="Close image viewer"
+          >
+            <span>CLOSE</span>
+            <b>×</b>
+          </button>
           <button className="lightbox-arrow lightbox-prev" type="button" onClick={(event) => { event.stopPropagation(); setActive((active - 1 + images.length) % images.length); }} aria-label="Previous">←</button>
           <div className="lightbox-frame" onClick={(event) => event.stopPropagation()}>
             <img src={`${base}/${images[active]}`} alt={`Project screenshot ${active + 1}`} />
