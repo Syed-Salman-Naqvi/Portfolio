@@ -1,4 +1,6 @@
 import MagicCanvas from "./components/MagicCanvas";
+import SiteNav from "./components/SiteNav";
+import ProjectLightbox from "./components/ProjectLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
 
@@ -11,28 +13,28 @@ const photos = [
 ];
 
 const blogs = [
-  ["Harry Potter and the Philosopher’s Stone", "https://medium.com/@smsalman862/harry-potter-and-the-philosophers-stone-29032db64a10"],
-  ["Navigating the World of Website Development Frameworks for Beginners", "https://medium.com/@smsalman862/navigating-the-world-of-website-development-frameworks-for-beginners-d9f0a3d2873d"],
-  ["Suggestions for beginner Website Developers & coders", "https://medium.com/@smsalman862/suggestions-for-becoming-a-website-developer-coder-3ecaab5a01e0"],
-  ["When a crisis hits, should we take a stand or remain neutral?", "https://medium.com/@smsalman862/when-a-crisis-hits-should-we-take-a-stand-or-remain-neutral-34dbefafc75f"],
+  ["Harry Potter and the Philosopher’s Stone", "A personal take on a classic story and the ideas behind it.", "https://medium.com/@smsalman862/harry-potter-and-the-philosophers-stone-29032db64a10"],
+  ["Navigating the World of Website Development Frameworks for Beginners", "A beginner-friendly look at choosing the right tools for building websites.", "https://medium.com/@smsalman862/navigating-the-world-of-website-development-frameworks-for-beginners-d9f0a3d2873d"],
+  ["Suggestions for beginner Website Developers & coders", "Practical advice for anyone starting a journey into web development.", "https://medium.com/@smsalman862/suggestions-for-becoming-a-website-developer-coder-3ecaab5a01e0"],
+  ["When a crisis hits, should we take a stand or remain neutral?", "A personal reflection on difficult decisions and taking a position.", "https://medium.com/@smsalman862/when-a-crisis-hits-should-we-take-a-stand-or-remain-neutral-34dbefafc75f"],
 ];
 
 const skills = [
-  ["HTML5", "Semantic, accessible and structured web pages.", 95, "01"],
-  ["CSS3", "Responsive layouts, animation and modern UI styling.", 92, "02"],
-  ["JavaScript", "Interactive interfaces and dynamic experiences.", 88, "03"],
-  ["TypeScript", "Typed, maintainable and scalable front-end code.", 78, "04"],
-  ["React", "Component-based interfaces and reusable UI systems.", 82, "05"],
-  ["Next.js", "Modern React applications with performance in mind.", 78, "06"],
-  ["WordPress", "Custom websites, Elementor and content solutions.", 90, "07"],
-  ["Git & GitHub", "Version control and collaborative development.", 85, "08"],
+  ["HTML5", "Semantic, accessible and structured web pages.", "95%", "HTML"],
+  ["CSS3", "Responsive layouts, animation and modern UI styling.", "92%", "CSS"],
+  ["JavaScript", "Interactive interfaces and dynamic experiences.", "88%", "JS"],
+  ["TypeScript", "Typed, maintainable and scalable front-end code.", "78%", "TS"],
+  ["React", "Component-based interfaces and reusable UI systems.", "82%", "RE"],
+  ["Next.js", "Modern React applications with performance in mind.", "78%", "NX"],
+  ["WordPress", "Custom websites, Elementor and content solutions.", "90%", "WP"],
+  ["Git & GitHub", "Version control and collaborative development.", "85%", "GH"],
 ];
 
 const projects = [
-  ["web-1-ss.png", "Project 01"],
-  ["web-2-ss.png", "Project 02"],
-  ["web-3-ss.png", "Project 03"],
-  ["web-4-ss.png", "Project 04"],
+  ["web-1-ss.png", "01", "Web Experience", "Interface & Front-End"],
+  ["web-2-ss.png", "02", "Digital Experience", "Responsive Development"],
+  ["web-3-ss.png", "03", "Web Interface", "Creative Direction"],
+  ["web-4-ss.png", "04", "Client Project", "Front-End Development"],
 ];
 
 const snapshots = ["web-1-ss.png", "web-2-ss.png", "web-3-ss.png", "web-4-ss.png", "web-5-ss.png", "web-6-ss.png"];
@@ -40,94 +42,115 @@ const snapshots = ["web-1-ss.png", "web-2-ss.png", "web-3-ss.png", "web-4-ss.png
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#start" aria-label="Home">
-          <img src={`${IMG}/SOLOWEBCIRCLE.png`} alt="Solo Web" />
-        </a>
-        <nav aria-label="Main navigation">
-          {[
-            ["START", "#start"],
-            ["CHALLENGE", "#challenge"],
-            ["WORK", "#work"],
-            ["SKILLS", "#skills"],
-            ["MAGIC", "#magic"],
-            ["CONTACT", "#contact"],
-          ].map(([label, href]) => <a key={label} href={href}>{label}</a>)}
-        </nav>
-      </header>
+      <SiteNav />
 
       <section className="hero" id="start">
-        <div className="hero-orb orb-a" />
-        <div className="hero-orb orb-b" />
-        <div className="hero-copy">
-          <p className="eyebrow">FRONT-END DEVELOPER • DIGITAL CREATIVE</p>
-          <h1>Hi, my name is <span>Syed Muhammad Salman Naqvi</span></h1>
-          <p className="hero-subtitle">I build <strong>dynamic websites</strong>, motion-led interfaces, animations & things that make the web feel alive.</p>
+        <div className="hero-grid" />
+        <div className="hero-glow hero-glow-one" />
+        <div className="hero-glow hero-glow-two" />
+
+        <div className="hero-content">
+          <div className="hero-kicker"><span /> FRONT-END DEVELOPER <b>×</b> DIGITAL CREATIVE</div>
+          <h1>
+            Hi, my name is
+            <strong>Syed Muhammad<br />Salman Naqvi<span>.</span></strong>
+          </h1>
+          <div className="hero-type">
+            <span>I develop</span>
+            <div className="type-window">
+              <span>dynamic websites</span>
+              <span>motion & interactions</span>
+              <span>creative interfaces</span>
+              <span>digital experiences</span>
+            </div>
+          </div>
+          <p className="hero-description">
+            I turn ideas into responsive, expressive websites with clean front-end code,
+            thoughtful interaction and a little bit of visual magic.
+          </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#work">Explore my work <span>↗</span></a>
-            <a className="btn btn-ghost" href="#contact">Let&apos;s connect</a>
+            <a className="button button-fill" href="#work">EXPLORE MY WORK <span>↗</span></a>
+            <a className="button button-line" href="#contact">LET&apos;S CONNECT</a>
+          </div>
+          <div className="hero-meta">
+            <span><b>01</b> AVAILABLE FOR CREATIVE WORK</span>
+            <span>SCROLL TO EXPLORE <i>↓</i></span>
           </div>
         </div>
-        <div className="hero-images">
-          <div className="hero-image hero-image-main">
+
+        <div className="hero-visual">
+          <div className="visual-label visual-label-top">SELECTED<br />FRAME / 01</div>
+          <div className="hero-photo hero-photo-back">
             <img src={`${IMG}/pic-7.jpg`} alt="Creative photography" />
-            <span>01 / CREATIVE</span>
           </div>
-          <div className="hero-image hero-image-secondary">
-            <img src={`${IMG}/mypic.jpg`} alt="Syed Muhammad Salman Naqvi" />
-            <span>02 / DEVELOPER</span>
+          <div className="hero-photo hero-photo-front">
+            <img src={`${IMG}/mypic.jpg`} alt="Portrait" />
+            <div className="photo-tag">DEVELOPER / CREATIVE</div>
           </div>
+          <div className="visual-mark">S<br />N</div>
+          <div className="visual-label visual-label-bottom">KARACHI / PAKISTAN<br />BUILDING ON THE WEB</div>
         </div>
-        <div className="scroll-note"><span /> SCROLL TO EXPLORE</div>
       </section>
 
-      <section className="moments section-dark">
-        <div className="section-heading">
-          <p className="eyebrow">BEYOND THE SCREEN</p>
-          <h2>I also enjoy capturing <em>heartwarming moments.</em></h2>
+      <div className="marquee" aria-label="Portfolio specialties">
+        <div><span>FRONT-END DEVELOPMENT</span><i>✦</i><span>CREATIVE DIRECTION</span><i>✦</i><span>INTERACTION DESIGN</span><i>✦</i><span>DIGITAL EXPERIENCES</span><i>✦</i><span>FRONT-END DEVELOPMENT</span><i>✦</i><span>CREATIVE DIRECTION</span><i>✦</i></div>
+      </div>
+
+      <section className="moments section-dark" id="moments">
+        <div className="section-intro split-intro">
+          <div>
+            <p className="eyebrow">BEYOND THE SCREEN / 01</p>
+            <h2>I also enjoy capturing <em>heartwarming moments.</em></h2>
+          </div>
+          <p>When I&apos;m away from the keyboard, I like to look for stories in ordinary moments. Photography is my other way of playing with composition, light and emotion.</p>
         </div>
+
         <div className="photo-grid">
           {photos.map(([src, title], i) => (
-            <figure className={i === 4 ? "photo-card photo-card-wide" : "photo-card"} key={src}>
+            <figure className={`photo-card photo-card-${i + 1}`} key={src}>
               <img src={`${IMG}/${src}`} alt={title} loading="lazy" />
-              <figcaption><span>0{i + 1}</span>{title}</figcaption>
+              <div className="photo-overlay" />
+              <figcaption><small>0{i + 1}</small><span>{title}</span></figcaption>
             </figure>
           ))}
         </div>
       </section>
 
       <section className="challenge" id="challenge">
-        <div className="section-heading centered">
-          <p className="eyebrow">THE CHALLENGE</p>
-          <h2>Challenge <em>Yourself</em></h2>
-          <p>Read, learn and keep building. A few things I have written about the web, creativity and difficult questions.</p>
+        <div className="section-intro centered-intro">
+          <p className="eyebrow">THE CHALLENGE / 02</p>
+          <h2>Challenge <em>yourself.</em></h2>
+          <p>Read, question, learn and keep building. A selection of things I&apos;ve written about technology, creativity, stories and difficult questions.</p>
         </div>
         <div className="blog-grid">
-          {blogs.map(([title, href], i) => (
+          {blogs.map(([title, description, href], i) => (
             <a className="blog-card" href={href} target="_blank" rel="noreferrer" key={title}>
-              <span className="card-number">0{i + 1}</span>
-              <span className="card-arrow">↗</span>
-              <h3>{title}</h3>
-              <p>READ ARTICLE ON MEDIUM</p>
+              <div className="blog-top"><span>ARTICLE / 0{i + 1}</span><b>↗</b></div>
+              <div className="blog-body">
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+              <div className="blog-bottom"><span>MEDIUM</span><span>READ ARTICLE</span></div>
             </a>
           ))}
         </div>
       </section>
 
       <section className="skills" id="skills">
-        <div className="section-heading centered">
-          <p className="eyebrow">WHAT I WORK WITH</p>
+        <div className="section-intro centered-intro">
+          <p className="eyebrow">WHAT I WORK WITH / 03</p>
           <h2>Tools of the <em>trade.</em></h2>
-          <p>Technologies I use to turn ideas into responsive, modern digital experiences.</p>
+          <p>My front-end toolkit for turning concepts into polished, responsive and maintainable digital experiences.</p>
         </div>
         <div className="skills-grid">
-          {skills.map(([name, desc, level, no]) => (
+          {skills.map(([name, desc, level, mark], i) => (
             <article className="skill-card" key={name}>
-              <span className="skill-no">{no}</span>
-              <div className="skill-main">
-                <div className="skill-top"><h3>{name}</h3><b>{level}%</b></div>
+              <div className="skill-number">0{i + 1}</div>
+              <div className="skill-mark">{mark}</div>
+              <div className="skill-copy">
+                <div className="skill-heading"><h3>{name}</h3><b>{level}</b></div>
                 <p>{desc}</p>
-                <div className="skill-line"><i style={{ width: `${level}%` }} /></div>
+                <div className="skill-track"><span style={{ width: level }} /></div>
               </div>
             </article>
           ))}
@@ -135,65 +158,71 @@ export default function Home() {
       </section>
 
       <section className="work section-dark" id="work">
-        <div className="section-heading">
-          <p className="eyebrow">SELECTED WORK</p>
-          <h2>Projects with <em>personality.</em></h2>
-          <p>Hover the cards to reveal the work. Click any image below for a larger view.</p>
+        <div className="section-intro split-intro work-intro">
+          <div>
+            <p className="eyebrow">SELECTED WORK / 04</p>
+            <h2>Projects with <em>personality.</em></h2>
+          </div>
+          <p>Real interface work, experiments and visual directions. Each piece is built around clarity, responsiveness and a distinct visual character.</p>
         </div>
+
         <div className="project-grid">
-          {projects.map(([src, title], i) => (
-            <a className="project-card" href="#snapshots" key={src}>
-              <img src={`${IMG}/${src}`} alt={title} loading="lazy" />
-              <div><span>{title}</span><b>VIEW SNAPSHOTS ↘</b></div>
+          {projects.map(([src, no, title, type], i) => (
+            <a className={`project-card project-card-${i + 1}`} href="#snapshots" key={src}>
+              <div className="project-image">
+                <img src={`${IMG}/${src}`} alt={title} loading="lazy" />
+              </div>
+              <div className="project-overlay" />
+              <div className="project-info">
+                <div><small>PROJECT {no}</small><h3>{title}</h3><p>{type}</p></div>
+                <span>VIEW <b>↗</b></span>
+              </div>
             </a>
           ))}
         </div>
       </section>
 
       <section className="snapshots" id="snapshots">
-        <div className="section-heading centered">
-          <p className="eyebrow">PROJECT SNAPSHOTS</p>
+        <div className="section-intro centered-intro">
+          <p className="eyebrow">PROJECT SNAPSHOTS / 05</p>
           <h2>A closer <em>look.</em></h2>
+          <p>Click any screenshot to open the full project view.</p>
         </div>
-        <div className="snapshot-grid">
-          {snapshots.map((src, i) => (
-            <a href={`${IMG}/${src}`} target="_blank" rel="noreferrer" key={src}>
-              <img src={`${IMG}/${src}`} alt={`Project screenshot ${i + 1}`} loading="lazy" />
-              <span>0{i + 1}</span>
-            </a>
-          ))}
-        </div>
+        <ProjectLightbox images={snapshots} base={IMG} />
       </section>
 
       <section className="magic" id="magic">
-        <div className="magic-copy">
-          <p className="eyebrow">INTERACTIVE SPACE</p>
+        <div className="magic-grid" />
+        <div className="magic-content">
+          <p className="eyebrow">INTERACTIVE SPACE / 06</p>
           <h2>Want to see some <em>magic?</em></h2>
-          <p>Move your mouse across the screen and explore a lightweight interactive version of the original fluid-art experience.</p>
+          <p>Move your cursor across the canvas. A lightweight interactive experience inspired by the original fluid-art section.</p>
+          <span className="magic-hint">MOVE YOUR CURSOR <i>✦</i></span>
         </div>
         <MagicCanvas />
       </section>
 
       <footer className="footer" id="contact">
-        <div className="footer-title">
-          <p className="eyebrow">LET&apos;S BUILD SOMETHING</p>
+        <div className="footer-head">
+          <p className="eyebrow">LET&apos;S BUILD SOMETHING / 07</p>
           <h2>Contact <em>/&gt;.</em></h2>
+          <div className="footer-orbit"><span>CREATIVE</span><span>DEVELOPER</span><span>CREATIVE</span></div>
         </div>
         <div className="footer-grid">
-          <div>
+          <div className="footer-social">
             <p className="footer-label">FIND ME ON</p>
-            <a href="https://www.linkedin.com/in/muhammad-salman-9b48aa232" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://www.instagram.com/s.a.l.m.a.n_n.a.q.v.i" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://www.facebook.com/profile.php?id=100007216749479" target="_blank" rel="noreferrer">Facebook ↗</a>
-            <a href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+            <a href="https://www.linkedin.com/in/muhammad-salman-9b48aa232" target="_blank" rel="noreferrer"><span>01</span>LinkedIn <b>↗</b></a>
+            <a href="https://www.instagram.com/s.a.l.m.a.n_n.a.q.v.i" target="_blank" rel="noreferrer"><span>02</span>Instagram <b>↗</b></a>
+            <a href="https://www.facebook.com/profile.php?id=100007216749479" target="_blank" rel="noreferrer"><span>03</span>Facebook <b>↗</b></a>
+            <a href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer"><span>04</span>WhatsApp <b>↗</b></a>
           </div>
-          <div className="footer-message">
+          <div className="footer-cta">
             <p className="footer-label">HAVE A PROJECT?</p>
             <h3>Let&apos;s turn the idea into something people remember.</h3>
-            <a className="email-link" href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">SEND ME A MESSAGE ↗</a>
+            <a className="footer-button" href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">SEND ME A MESSAGE <span>↗</span></a>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Salman Naqvi</span><span>BUILT WITH NEXT.JS</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} SALMAN NAQVI</span><span>DESIGNED & BUILT WITH NEXT.JS</span><span>BACK TO TOP ↑</span></div>
       </footer>
     </main>
   );
