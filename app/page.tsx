@@ -105,7 +105,6 @@ export default function Home() {
           </div>
           <p>When I&apos;m away from the keyboard, I like to look for stories in ordinary moments. Photography is my other way of playing with composition, light and emotion.</p>
         </div>
-
         <div className="photo-grid">
           {photos.map(([src, title], i) => (
             <figure className={`photo-card photo-card-${i + 1}`} key={src}>
@@ -127,10 +126,7 @@ export default function Home() {
           {blogs.map(([title, description, href], i) => (
             <a className="blog-card" href={href} target="_blank" rel="noreferrer" key={title}>
               <div className="blog-top"><span>ARTICLE / 0{i + 1}</span><b>↗</b></div>
-              <div className="blog-body">
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </div>
+              <div className="blog-body"><h3>{title}</h3><p>{description}</p></div>
               <div className="blog-bottom"><span>MEDIUM</span><span>READ ARTICLE</span></div>
             </a>
           ))}
@@ -166,13 +162,10 @@ export default function Home() {
           </div>
           <p>Real interface work, experiments and visual directions. Each piece is built around clarity, responsiveness and a distinct visual character.</p>
         </div>
-
         <div className="project-grid">
           {projects.map(([src, no, title, type], i) => (
             <a className={`project-card project-card-${i + 1}`} href="#snapshots" key={src}>
-              <div className="project-image">
-                <img src={`${IMG}/${src}`} alt={title} loading="lazy" />
-              </div>
+              <div className="project-image"><img src={`${IMG}/${src}`} alt={title} loading="lazy" /></div>
               <div className="project-overlay" />
               <div className="project-info">
                 <div><small>PROJECT {no}</small><h3>{title}</h3><p>{type}</p></div>
@@ -212,7 +205,11 @@ export default function Home() {
             <a className="footer-button" href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">SEND ME A MESSAGE <span>↗</span></a>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} SALMAN NAQVI</span><span>DESIGNED & BUILT WITH NEXT.JS</span><span>BACK TO TOP ↑</span></div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} SALMAN NAQVI</span>
+          <span>DESIGNED & BUILT WITH NEXT.JS</span>
+          <a className="back-to-top" href="#start" aria-label="Back to top">BACK TO TOP ↑</a>
+        </div>
       </footer>
     </main>
   );
