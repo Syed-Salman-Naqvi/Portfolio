@@ -190,7 +190,7 @@ export default function Home() {
           <div className="footer-message">
             <p className="footer-label">HAVE A PROJECT?</p>
             <h3>Let&apos;s turn the idea into something people remember.</h3>
-            <a className="email-link" href="mailto:salman@example.com">SEND ME A MESSAGE ↗</a>
+            <a className="email-link" href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">SEND ME A MESSAGE ↗</a>
           </div>
         </div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Salman Naqvi</span><span>BUILT WITH NEXT.JS</span></div>
