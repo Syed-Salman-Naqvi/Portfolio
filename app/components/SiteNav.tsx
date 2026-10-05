@@ -5,7 +5,7 @@ import { useState } from "react";
 const links = [
   ["START", "#start"],
   ["MOMENTS", "#moments"],
-  ["CHALLENGE", "#challenge"],
+  ["ARTICLES", "#challenge"],
   ["SKILLS", "#skills"],
   ["WORK", "#work"],
   ["CONTACT", "#contact"],
