@@ -258,5 +258,6 @@ main > *:not(.mouse-magic):not(.site-header){position:relative;z-index:1}
 }
 .site-header{z-index:50!important}
 .lightbox{z-index:100!important}
+body.lightbox-open .site-header{display:none!important}
 @media(max-width:800px){.mouse-magic{opacity:.65}}
 @media(prefers-reduced-motion:reduce){.mouse-magic{display:none}}
