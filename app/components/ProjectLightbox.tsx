@@ -19,9 +19,11 @@ export default function ProjectLightbox({ images, base }: Props) {
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    document.body.classList.add("lightbox-open");
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      document.body.classList.remove("lightbox-open");
     };
   }, [active, images.length]);
 
