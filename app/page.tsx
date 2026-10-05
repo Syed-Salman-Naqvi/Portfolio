@@ -194,10 +194,10 @@ export default function Home() {
         <div className="footer-grid">
           <div className="footer-social">
             <p className="footer-label">FIND ME ON</p>
-            <a href="https://www.linkedin.com/in/muhammad-salman-9b48aa232" target="_blank" rel="noreferrer"><span>01</span>LinkedIn <b>↗</b></a>
+            <a href="https://www.linkedin.com/in/smsn" target="_blank" rel="noreferrer"><span>01</span>LinkedIn <b>↗</b></a>
             <a href="https://www.instagram.com/s.a.l.m.a.n_n.a.q.v.i" target="_blank" rel="noreferrer"><span>02</span>Instagram <b>↗</b></a>
             <a href="https://www.facebook.com/profile.php?id=100007216749479" target="_blank" rel="noreferrer"><span>03</span>Facebook <b>↗</b></a>
-            <a href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer"><span>04</span>WhatsApp <b>↗</b></a>
+            <a href="https://wa.me/923272134562" target="_blank" rel="noreferrer"><span>04</span>WhatsApp <b>↗</b></a>
           </div>
           <div className="footer-cta">
             <p className="footer-label">HAVE A PROJECT?</p>
