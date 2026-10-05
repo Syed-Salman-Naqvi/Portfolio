@@ -118,9 +118,9 @@ export default function Home() {
 
       <section className="challenge" id="challenge">
         <div className="section-intro centered-intro">
-          <p className="eyebrow">THE CHALLENGE / 02</p>
-          <h2>Challenge <em>yourself.</em></h2>
-          <p>Read, question, learn and keep building. A selection of things I&apos;ve written about technology, creativity, stories and difficult questions.</p>
+          <p className="eyebrow">SELECTED ARTICLES / 02</p>
+          <h2>Ideas worth <em>reading.</em></h2>
+          <p>Read, question, learn and keep building. A selection of articles I&apos;ve written about technology, creativity, stories and difficult questions on Medium.</p>
         </div>
         <div className="blog-grid">
           {blogs.map(([title, description, href], i) => (
