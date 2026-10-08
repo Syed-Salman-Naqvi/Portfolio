@@ -102,15 +102,18 @@ h1,h2,h3,p{overflow-wrap:break-word}
 
 /* MOMENTS */
 .photo-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.05fr .85fr .85fr 1.05fr;grid-template-rows:260px 260px;gap:13px}
-.photo-card{position:relative;margin:0;overflow:hidden;border:1px solid var(--line);background:#080b0b;min-width:0}
+.photo-card{position:relative;margin:0;padding:0;min-width:0;min-height:0;overflow:hidden;border:1px solid var(--line);background:#080b0b;color:inherit;font:inherit;text-align:left;cursor:zoom-in;appearance:none}
 .photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .6s}
 .photo-card:hover img{transform:scale(1.055);filter:saturate(1.12)}
-.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.85))}
-.photo-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(20,255,236,.07),transparent 40%);opacity:0;transition:.4s}
+.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(0,0,0,.85));pointer-events:none}
+.photo-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(20,255,236,.07),transparent 40%);opacity:0;transition:.4s;pointer-events:none}
 .photo-card:hover .photo-overlay{opacity:1}
-.photo-card figcaption{position:absolute;z-index:2;left:19px;right:19px;bottom:18px;display:flex;gap:12px;align-items:end}
-.photo-card figcaption small{color:var(--cyan);font:500 8px "DM Mono",monospace}
-.photo-card figcaption span{font-size:.8rem;font-weight:700;line-height:1.25}
+.photo-caption{position:absolute;z-index:2;left:19px;right:19px;bottom:18px;display:flex;gap:12px;align-items:end;pointer-events:none}
+.photo-caption small{color:var(--cyan);font:500 8px "DM Mono",monospace}
+.photo-caption span{font-size:.8rem;font-weight:700;line-height:1.25}
+.photo-open{position:absolute;z-index:3;top:14px;right:14px;padding:7px 9px;background:rgba(0,0,0,.72);color:#d6dddd;font:500 8px "DM Mono",monospace;letter-spacing:.12em;opacity:0;transform:translateY(-5px);transition:.3s;pointer-events:none}
+.photo-card:hover .photo-open{opacity:1;transform:none}
+.photo-card:focus-visible{outline:1px solid var(--cyan);outline-offset:3px}
 
 /* Desktop moments layout: every card owns its grid area so images never stack on top of each other. */
 .photo-card-1{grid-column:1;grid-row:1/3}
@@ -119,7 +122,23 @@ h1,h2,h3,p{overflow-wrap:break-word}
 .photo-card-4{grid-column:4;grid-row:1}
 .photo-card-5{grid-column:2/5;grid-row:2}
 .photo-card-3 img{object-position:center 62%}
-.photo-card-5 img{object-position:center 20%}
+/* Photo 05 is shown in full instead of being cropped by object-fit: cover. */
+.photo-card-5 img{object-fit:contain;object-position:center;background:#080b0b}
+
+/* MOMENTS LIGHTBOX */
+.moments-lightbox{position:fixed;z-index:100;inset:0;display:flex;align-items:center;justify-content:center;padding:5vw;background:rgba(0,0,0,.94);backdrop-filter:blur(15px)}
+.moments-lightbox-frame{width:min(1180px,86vw);max-height:90vh;border:1px solid var(--line-strong);background:#070a0a;box-shadow:0 30px 100px rgba(0,0,0,.65);overflow:hidden;cursor:zoom-in}
+.moments-lightbox-frame.is-zoomed{cursor:zoom-out}
+.moments-lightbox-frame img{display:block;width:100%;height:auto;max-height:80vh;object-fit:contain;cursor:zoom-in;transition:transform .45s var(--ease);will-change:transform;user-select:none;-webkit-user-drag:none}
+.moments-lightbox-frame.is-zoomed img{transform:scale(2.35);cursor:zoom-out}
+.moments-lightbox-frame>div{display:flex;justify-content:space-between;gap:20px;padding:12px 15px;color:#6f7b7b;font:500 7px "DM Mono",monospace;letter-spacing:.14em;border-top:1px solid var(--line)}
+.moments-lightbox-frame>div span:first-child{color:var(--cyan)}
+.moments-lightbox-close,.moments-lightbox-arrow{position:fixed;z-index:12;border:1px solid rgba(20,255,236,.34);background:rgba(7,12,12,.96);color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.25s var(--ease)}
+.moments-lightbox-close{top:22px;right:24px;width:auto;min-width:82px;height:42px;padding:0 12px;gap:8px;font:500 8px/1 "DM Mono",monospace;letter-spacing:.14em}
+.moments-lightbox-close b{font:400 22px/1 Arial,sans-serif}
+.moments-lightbox-arrow{top:50%;width:44px;height:44px;transform:translateY(-50%);font-size:17px}
+.moments-lightbox-arrow:hover,.moments-lightbox-close:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 22px rgba(20,255,236,.12)}
+.moments-lightbox-prev{left:25px}.moments-lightbox-next{right:25px}
 
 /* BLOG */
 .challenge{background:linear-gradient(180deg,#070a0a,#0b1010)}
@@ -235,12 +254,13 @@ h1,h2,h3,p{overflow-wrap:break-word}
   .hero-visual{height:430px;margin-top:15px}.hero-photo-back{inset:5% 7% 5% 0}.hero-photo-front{width:47%;height:44%}.visual-label{font-size:6px}.visual-mark{font-size:52px}
   .marquee>div{gap:22px;padding:12px 0}.marquee span{font-size:7px}
   .moments,.challenge,.skills,.work,.snapshots{padding:80px 16px}.section-intro{margin-bottom:45px}.split-intro h2,.centered-intro h2{font-size:clamp(2.65rem,13vw,4.4rem)}
-  .photo-grid{gap:8px;grid-template-rows:245px 245px 245px}.photo-card figcaption{left:11px;right:11px;bottom:11px;gap:7px}.photo-card figcaption span{font-size:.68rem}
+  .photo-grid{gap:8px;grid-template-rows:245px 245px 245px}.photo-caption{left:11px;right:11px;bottom:11px;gap:7px}.photo-caption span{font-size:.68rem}.photo-open{display:none}
   .blog-card{min-height:270px;padding:22px}.blog-body h3{font-size:1.35rem}
   .skill-card{grid-template-columns:24px 45px 1fr;gap:10px;padding:17px}.skill-mark{width:42px;height:42px;font-size:10px}.skill-heading h3{font-size:.9rem}.skill-copy p{font-size:.7rem}
   .project-card-1,.project-card-2,.project-card-3,.project-card-4{min-height:390px}.project-card-1 .project-image,.project-card-1 .project-image img,.project-card-2 .project-image,.project-card-2 .project-image img,.project-card-3 .project-image,.project-card-3 .project-image img,.project-card-4 .project-image,.project-card-4 .project-image img{min-height:390px}.project-info{left:17px;right:17px;bottom:17px}.project-info h3{font-size:1.2rem}
   .snapshot-grid{gap:8px}.snapshot-item img{height:260px}.snapshot-open{display:none}
   .lightbox{padding:15px}.lightbox-frame{width:100%;max-height:82vh}.lightbox-frame img{max-height:72vh}.lightbox-frame>div{font-size:6px}.lightbox-arrow{display:none}.lightbox-close{top:12px;right:12px}
+  .moments-lightbox{padding:15px}.moments-lightbox-frame{width:100%;max-height:82vh}.moments-lightbox-frame img{max-height:72vh}.moments-lightbox-frame>div{font-size:6px}.moments-lightbox-arrow{display:none}.moments-lightbox-close{top:12px;right:12px}
   .magic{min-height:600px}.magic-content{padding:20px}.magic-content h2{font-size:clamp(3rem,15vw,5rem)}
   .footer{padding:80px 16px 25px}.footer-head h2{font-size:clamp(4rem,20vw,7rem)}.footer-orbit{display:none}.footer-grid{margin:70px auto 75px}.footer-cta h3{font-size:2rem}.footer-bottom{font-size:6px;gap:10px}.footer-bottom span:nth-child(2){display:none}
 }
@@ -267,5 +287,6 @@ main > *:not(.mouse-magic):not(.site-header){position:relative;z-index:1}
 .site-header{z-index:50!important}
 .lightbox{z-index:100!important}
 body.lightbox-open .site-header{display:none!important}
+body.lightbox-open .mouse-magic{display:none!important}
 @media(max-width:800px){.mouse-magic{opacity:.65}}
 @media(prefers-reduced-motion:reduce){.mouse-magic{display:none}}
