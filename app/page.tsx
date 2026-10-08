@@ -1,6 +1,7 @@
 import SiteNav from "./components/SiteNav";
 import MouseMagic from "./components/MouseMagic";
 import ProjectLightbox from "./components/ProjectLightbox";
+import MomentsLightbox from "./components/MomentsLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
 
@@ -105,15 +106,7 @@ export default function Home() {
           </div>
           <p>When I&apos;m away from the keyboard, I like to look for stories in ordinary moments. Photography is my other way of playing with composition, light and emotion.</p>
         </div>
-        <div className="photo-grid">
-          {photos.map(([src, title], i) => (
-            <figure className={`photo-card photo-card-${i + 1}`} key={src}>
-              <img src={`${IMG}/${src}`} alt={title} loading="lazy" />
-              <div className="photo-overlay" />
-              <figcaption><small>0{i + 1}</small><span>{title}</span></figcaption>
-            </figure>
-          ))}
-        </div>
+        <MomentsLightbox photos={photos} base={IMG} />
       </section>
 
       <section className="challenge" id="challenge">
