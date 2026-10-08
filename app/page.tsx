@@ -5,7 +5,7 @@ import MomentsLightbox from "./components/MomentsLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
 
-const photos = [
+const photos: [string, string][] = [
   ["pic-1.jpg", "Keep the smile on!"],
   ["pic-8.jpg", "Do more of what makes you happy."],
   ["pic-6.jpg", "Be brave enough to live differently."],
