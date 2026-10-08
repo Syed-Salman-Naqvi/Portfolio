@@ -4,6 +4,7 @@ import ProjectLightbox from "./components/ProjectLightbox";
 import MomentsLightbox from "./components/MomentsLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
+const RESUME_URL = "/images/Syed%20Salman%20Naqvi%20Resume.pdf";
 
 const photos: [string, string][] = [
   ["1000359228.jpg.jpeg", "Skyline over the old water tower."],
@@ -73,6 +74,7 @@ export default function Home() {
           <div className="hero-actions">
             <a className="button button-fill" href="#work">EXPLORE MY WORK <span>↗</span></a>
             <a className="button button-line" href="#contact">LET&apos;S CONNECT</a>
+            <a className="button button-resume" href={RESUME_URL} download="Syed Salman Naqvi Resume.pdf" aria-label="Download Syed Salman Naqvi resume as a PDF"><span className="resume-icon" aria-hidden="true">↓</span>DOWNLOAD RESUME</a>
           </div>
           <div className="hero-meta">
             <span><b>01</b> AVAILABLE FOR CREATIVE WORK</span>
