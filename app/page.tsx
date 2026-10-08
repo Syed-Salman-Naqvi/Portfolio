@@ -180,6 +180,50 @@ export default function Home() {
         <ProjectLightbox images={snapshots} base={IMG} />
       </section>
 
+
+      <section className="experience section-dark" id="experience">
+        <div className="section-intro split-intro experience-intro">
+          <div>
+            <p className="eyebrow">CURRENT EXPERIENCE / 06</p>
+            <h2>Inside the <em>newsroom.</em></h2>
+          </div>
+          <p>Working at ASIA ONE NEWS as a Panel Producer in the Production Control Room, where live broadcasting demands precision, coordination and fast decisions. I help keep the production flow organized and responsive in a high-pressure newsroom environment.</p>
+        </div>
+
+        <article className="experience-card">
+          <div className="experience-top">
+            <div>
+              <span className="experience-label">ASIA ONE NEWS</span>
+              <h3>Panel Producer <span>/ PCR</span></h3>
+            </div>
+            <div className="experience-date">DEC 2025 — PRESENT</div>
+          </div>
+
+          <div className="experience-divider" />
+
+          <div className="experience-grid">
+            <div className="experience-lead">
+              <span className="experience-index">01</span>
+              <h4>Live production<br /><em>under pressure.</em></h4>
+            </div>
+            <div className="experience-points">
+              <div><span>01</span><p>Coordinate real-time communication between editorial, technical and production teams inside the PCR.</p></div>
+              <div><span>02</span><p>Monitor live programme flow and respond quickly to changes, breaking developments and production requirements.</p></div>
+              <div><span>03</span><p>Support panel production by keeping information, cues and team coordination clear throughout live broadcasts.</p></div>
+              <div><span>04</span><p>Handle unexpected challenges and operational bottlenecks with calm problem-solving and split-second decision-making.</p></div>
+            </div>
+          </div>
+
+          <div className="experience-tags">
+            <span>LIVE BROADCAST</span>
+            <span>PCR OPERATIONS</span>
+            <span>TEAM COORDINATION</span>
+            <span>CRISIS MANAGEMENT</span>
+            <span>REAL-TIME COMMUNICATION</span>
+          </div>
+        </article>
+      </section>
+
       <footer className="footer" id="contact">
         <div className="footer-head">
           <p className="eyebrow">LET&apos;S BUILD SOMETHING / 07</p>
