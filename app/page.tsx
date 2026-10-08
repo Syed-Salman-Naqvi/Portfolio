@@ -6,11 +6,11 @@ import MomentsLightbox from "./components/MomentsLightbox";
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
 
 const photos: [string, string][] = [
-  ["pic-1.jpg", "Keep the smile on!"],
-  ["pic-8.jpg", "Do more of what makes you happy."],
-  ["pic-6.jpg", "Be brave enough to live differently."],
-  ["pic-4.jpg", "Follow your dreams."],
-  ["pic-3.jpg", "You will either find a way or make one."],
+  ["1000359228.jpg.jpeg", "Skyline over the old water tower."],
+  ["1000359231.jpg.jpeg", "Giant tree and an endless sky."],
+  ["1000359242.jpg.jpeg", "Water delivery at sunset."],
+  ["1000359245.jpg.jpeg", "Rows of clay pots in the evening light."],
+  ["1000359248.jpg.jpeg", "A forgotten bus swallowed by nature."],
 ];
 
 const blogs = [
