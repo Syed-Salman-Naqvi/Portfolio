@@ -4,7 +4,7 @@ import ProjectLightbox from "./components/ProjectLightbox";
 import MomentsLightbox from "./components/MomentsLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
-const RESUME_URL = "/images/Syed%20Salman%20Naqvi%20Resume.pdf";
+const RESUME_URL = "https://raw.githubusercontent.com/Syed-Salman-Naqvi/Portfolio/master/images/Syed%20Salman%20Naqvi%20Resume.pdf";
 
 const photos: [string, string][] = [
   ["1000359228.jpg.jpeg", "Skyline over the old water tower."],
