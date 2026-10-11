@@ -1,6 +1,6 @@
 import SiteNav from "./components/SiteNav";
 import MouseMagic from "./components/MouseMagic";
-import ProjectLightbox from "./components/ProjectLightbox";
+import PortfolioGame from "./components/PortfolioGame";
 import MomentsLightbox from "./components/MomentsLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
@@ -39,7 +39,6 @@ const projects = [
   ["web-4-ss.png", "04", "Client Project", "Front-End Development"],
 ];
 
-const snapshots = ["web-1-ss.png", "web-2-ss.png", "web-3-ss.png", "web-4-ss.png", "web-5-ss.png", "web-6-ss.png"];
 
 export default function Home() {
   return (
@@ -152,10 +151,10 @@ export default function Home() {
       <section className="work section-dark" id="work">
         <div className="section-intro split-intro work-intro">
           <div>
-            <p className="eyebrow">THE WORK / 04 — BUILT TO STAND OUT</p>
-            <h2>Small projects.<br /><em>Big energy.</em></h2>
+            <p className="eyebrow">SELECTED WORK / 04 — BUILT TO STAND OUT</p>
+            <h2>A closer <em>look.</em></h2>
           </div>
-          <p>A quick hit of the websites I’ve built. Pick a frame to jump straight into the full visual gallery.</p>
+          <p>A closer look at real interfaces, responsive layouts and front-end experiments—each built to make the web feel a little more alive.</p>
         </div>
         <div className="project-grid">
           {projects.map(([src, no, title, type], i) => (
@@ -171,14 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="snapshots" id="snapshots">
-        <div className="section-intro centered-intro">
-          <p className="eyebrow">PROJECT SNAPSHOTS / 05</p>
-          <h2>A closer <em>look.</em></h2>
-          <p>Click any screenshot to open the full project view.</p>
-        </div>
-        <ProjectLightbox images={snapshots} base={IMG} />
-      </section>
+      <PortfolioGame />
 
 
       <section className="experience section-dark" id="experience">
