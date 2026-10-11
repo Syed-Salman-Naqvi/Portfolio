@@ -223,7 +223,7 @@ export default function Home() {
           <div className="footer-cta">
             <p className="footer-label">HAVE A PROJECT?</p>
             <h3>Let&apos;s turn the idea into something people remember.</h3>
-            <a className="footer-button" href="https://wa.me/qr/5YMDYU6JUPZLL1" target="_blank" rel="noreferrer">SEND ME A MESSAGE <span>↗</span></a>
+            <a className="footer-button" href="https://wa.me/923272134562?text=Hi%20Salman%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">SEND ME A MESSAGE <span>↗</span></a>
           </div>
         </div>
         <div className="footer-bottom">
