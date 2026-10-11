@@ -439,3 +439,51 @@ body.lightbox-open .mouse-magic{display:none!important}
   .game-foot{flex-direction:column;gap:8px;padding:13px 12px}
 }
 @media(prefers-reduced-motion:reduce){.game-emblem,.game-orb{animation:none}}
+
+
+/* MINI-GAME SELECTOR */
+.game-picker{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);background:#080c0c}
+.game-tab{display:flex;align-items:center;gap:13px;min-height:62px;padding:0 clamp(14px,2.5vw,28px);border:0;border-right:1px solid var(--line);background:transparent;color:#778484;text-align:left;font:500 9px "DM Mono",monospace;letter-spacing:.13em;cursor:pointer;transition:background .25s,color .25s}
+.game-tab:last-child{border-right:0}
+.game-tab>span{color:#465454;font-size:8px}
+.game-tab>b{margin-left:auto;color:#536161;font-size:16px;font-weight:400}
+.game-tab:hover{color:#fff;background:rgba(20,255,236,.035)}
+.game-tab.is-active{color:var(--cyan);background:rgba(20,255,236,.065);box-shadow:inset 0 -2px var(--cyan)}
+.game-tab.is-active>span,.game-tab.is-active>b{color:var(--cyan)}
+.snake-game{background:#050808}
+.snake-hud{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.snake-hud>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 22px;border-right:1px solid var(--line)}
+.snake-hud>div:last-child{border-right:0}
+.snake-hud span{color:#697777;font:500 8px "DM Mono",monospace;letter-spacing:.14em}
+.snake-hud strong{color:var(--cyan);font:500 20px "DM Mono",monospace}
+.snake-hud .snake-status{font-size:10px}
+.snake-board-wrap{padding:clamp(14px,3vw,32px);background:radial-gradient(ellipse at center,rgba(20,255,236,.045),transparent 65%),#050808}
+.snake-board{position:relative;display:grid;width:100%;max-width:760px;margin:auto;aspect-ratio:20/13;overflow:hidden;border:1px solid rgba(20,255,236,.22);background-image:linear-gradient(rgba(20,255,236,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(20,255,236,.055) 1px,transparent 1px);background-size:5% 7.6923%}
+.snake-cell{min-width:0;min-height:0;border-radius:2px}
+.snake-body{margin:2px;background:rgba(20,255,236,.58);box-shadow:0 0 10px rgba(20,255,236,.16)}
+.snake-head{z-index:1;margin:1px;background:#eaffff;border:2px solid var(--cyan);box-shadow:0 0 17px rgba(20,255,236,.8)}
+.snake-food{z-index:1;margin:20%;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan),0 0 28px rgba(20,255,236,.45);animation:gamePulse .7s infinite alternate}
+.snake-overlay{position:absolute;z-index:3;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:rgba(3,7,7,.79);backdrop-filter:blur(3px)}
+.snake-overlay-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:13px;border:1px solid rgba(20,255,236,.35);border-radius:50%;color:var(--cyan);font:400 25px "DM Mono",monospace;box-shadow:0 0 30px rgba(20,255,236,.08)}
+.snake-overlay .eyebrow{margin-bottom:9px;font-size:8px}
+.snake-overlay h3{margin:0;font-size:clamp(1.7rem,4vw,3rem);letter-spacing:-.06em}
+.snake-overlay>p:not(.eyebrow){max-width:380px;margin:10px 0 19px;color:#9aa7a7;font-size:.8rem;line-height:1.6}
+.snake-controls{display:none;flex-direction:column;align-items:center;gap:7px;padding:0 16px 20px}
+.snake-controls>div{display:flex;gap:7px}
+.snake-controls button{width:46px;height:42px;border:1px solid rgba(20,255,236,.3);background:rgba(20,255,236,.055);color:var(--cyan);font-size:18px;cursor:pointer;touch-action:manipulation}
+.snake-controls button:active{background:var(--cyan);color:#00100e}
+@media(max-width:560px){
+  .game-picker .game-tab{min-height:58px;padding:0 10px;gap:7px;font-size:7px;letter-spacing:.07em}
+  .game-tab>b{font-size:13px}
+  .snake-hud>div{align-items:flex-start;flex-direction:column;gap:7px;padding:12px 10px}
+  .snake-hud span{font-size:6px;letter-spacing:.08em}
+  .snake-hud strong{font-size:17px}
+  .snake-hud .snake-status{font-size:9px}
+  .snake-board-wrap{padding:12px 8px}
+  .snake-overlay{padding:8px}
+  .snake-overlay-icon{width:35px;height:35px;font-size:18px;margin-bottom:7px}
+  .snake-overlay h3{font-size:1.55rem}
+  .snake-overlay>p:not(.eyebrow){font-size:.68rem;margin:7px 0 12px}
+  .snake-overlay .game-start-button{min-height:40px;padding:0 14px;font-size:8px}
+  .snake-controls{display:flex}
+}
