@@ -2,6 +2,7 @@ import SiteNav from "./components/SiteNav";
 import MouseMagic from "./components/MouseMagic";
 import PortfolioGame from "./components/PortfolioGame";
 import MomentsLightbox from "./components/MomentsLightbox";
+import ProjectLightbox from "./components/ProjectLightbox";
 
 const IMG = "https://cdn.jsdelivr.net/gh/Syed-Salman-Naqvi/Portfolio@master/images";
 const RESUME_URL = "https://raw.githubusercontent.com/Syed-Salman-Naqvi/Portfolio/master/images/Syed%20Salman%20Naqvi%20Resume.pdf";
@@ -32,12 +33,7 @@ const skills = [
   ["Git & GitHub", "Version control and collaborative development.", "85%", "GH"],
 ];
 
-const projects = [
-  ["web-1-ss.png", "01", "Web Experience", "Interface & Front-End"],
-  ["web-2-ss.png", "02", "Digital Experience", "Responsive Development"],
-  ["web-3-ss.png", "03", "Web Interface", "Creative Direction"],
-  ["web-4-ss.png", "04", "Client Project", "Front-End Development"],
-];
+const snapshots = ["web-1-ss.png", "web-2-ss.png", "web-3-ss.png", "web-4-ss.png", "web-5-ss.png", "web-6-ss.png"];
 
 
 export default function Home() {
@@ -148,26 +144,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work section-dark" id="work">
+      <section className="snapshots section-dark" id="work">
         <div className="section-intro split-intro work-intro">
           <div>
-            <p className="eyebrow">SELECTED WORK / 04 — BUILT TO STAND OUT</p>
-            <h2>A closer <em>look.</em></h2>
+            <p className="eyebrow">SELECTED PROJECTS / 04</p>
+            <h2>Projects with <em>personality.</em></h2>
           </div>
-          <p>A closer look at real interfaces, responsive layouts and front-end experiments—each built to make the web feel a little more alive.</p>
+          <p>Explore my website interfaces and front-end work in detail. Open any screenshot for a closer look, then move through the gallery to see more.</p>
         </div>
-        <div className="project-grid">
-          {projects.map(([src, no, title, type], i) => (
-            <a className={`project-card project-card-${i + 1}`} href="#snapshots" key={src}>
-              <div className="project-image"><img src={`${IMG}/${src}`} alt={title} loading="lazy" /></div>
-              <div className="project-overlay" />
-              <div className="project-info">
-                <div><small>PROJECT {no}</small><h3>{title}</h3><p>{type}</p></div>
-                <span>VIEW <b>↗</b></span>
-              </div>
-            </a>
-          ))}
-        </div>
+        <ProjectLightbox images={snapshots} base={IMG} />
       </section>
 
       <PortfolioGame />
