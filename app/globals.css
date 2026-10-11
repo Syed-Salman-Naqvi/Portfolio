@@ -487,3 +487,15 @@ body.lightbox-open .mouse-magic{display:none!important}
   .snake-overlay .game-start-button{min-height:40px;padding:0 14px;font-size:8px}
   .snake-controls{display:flex}
 }
+
+
+/* ASIA ONE NEWS — newsroom branding */
+.experience-company{display:flex;align-items:center;gap:22px;min-width:0}
+.experience-logo{width:clamp(76px,10vw,112px);height:clamp(76px,10vw,112px);flex:0 0 auto;display:grid;place-items:center;padding:10px;border:1px solid rgba(20,255,236,.24);background:rgba(255,255,255,.035);box-shadow:0 0 30px rgba(20,255,236,.06)}
+.experience-logo img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:560px){
+  .experience-company{align-items:flex-start;gap:14px}
+  .experience-logo{width:64px;height:64px;padding:6px}
+  .experience-company .experience-label{font-size:8px}
+  .experience-company .experience-top h3{font-size:1.55rem}
+}
