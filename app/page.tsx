@@ -152,10 +152,10 @@ export default function Home() {
       <section className="work section-dark" id="work">
         <div className="section-intro split-intro work-intro">
           <div>
-            <p className="eyebrow">SELECTED WORK / 04</p>
-            <h2>Projects with <em>personality.</em></h2>
+            <p className="eyebrow">THE WORK / 04 — BUILT TO STAND OUT</p>
+            <h2>Small projects.<br /><em>Big energy.</em></h2>
           </div>
-          <p>Real interface work, experiments and visual directions. Each piece is built around clarity, responsiveness and a distinct visual character.</p>
+          <p>A quick hit of the websites I’ve built. Pick a frame to jump straight into the full visual gallery.</p>
         </div>
         <div className="project-grid">
           {projects.map(([src, no, title, type], i) => (
