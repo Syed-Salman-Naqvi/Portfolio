@@ -169,9 +169,14 @@ export default function Home() {
 
         <article className="experience-card">
           <div className="experience-top">
-            <div>
-              <span className="experience-label">ASIA ONE NEWS</span>
-              <h3>Panel Producer <span>/ PCR</span></h3>
+            <div className="experience-company">
+              <div className="experience-logo">
+                <img src={`${IMG}/new-logo.png`} alt="Asia One News logo" />
+              </div>
+              <div>
+                <span className="experience-label">ASIA ONE NEWS</span>
+                <h3>Panel Producer <span>/ PCR</span></h3>
+              </div>
             </div>
             <div className="experience-date">DEC 2025 — PRESENT</div>
           </div>
