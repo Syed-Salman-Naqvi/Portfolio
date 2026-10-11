@@ -392,3 +392,50 @@ body.lightbox-open .mouse-magic{display:none!important}
   .experience-points p{font-size:.72rem}
   .experience-tags{margin-top:25px}
 }
+
+
+/* MINI GAME — an interactive portfolio side quest */
+.game-section{position:relative;padding:clamp(85px,9vw,125px) clamp(20px,7vw,110px);background:radial-gradient(ellipse at 50% 65%,rgba(20,255,236,.055),transparent 55%),#070a0a;border-top:1px solid var(--line);overflow:hidden}
+.game-section:before{content:"";position:absolute;right:-140px;top:5%;width:360px;height:360px;border:1px solid rgba(20,255,236,.09);border-radius:50%;pointer-events:none}
+.game-intro{position:relative;z-index:1}
+.game-intro h2{max-width:700px}
+.game-shell{position:relative;max-width:var(--max);margin:0 auto;border:1px solid rgba(20,255,236,.22);background:#060909;box-shadow:0 28px 90px rgba(0,0,0,.3),0 0 55px rgba(20,255,236,.035)}
+.game-hud{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.game-hud>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 22px;border-right:1px solid var(--line)}
+.game-hud>div:last-child{border-right:0}
+.game-hud span,.game-foot,.game-corner{font:500 8px "DM Mono",monospace;letter-spacing:.14em;color:#697777}
+.game-hud strong{font:500 22px "DM Mono",monospace;color:var(--cyan)}
+.game-hud strong small{font-size:10px;color:#778383;margin-left:3px}
+.game-hud .game-time-low{color:#ff6d82;animation:gamePulse .6s infinite alternate}
+.game-arena{position:relative;height:clamp(340px,44vw,510px);overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at center,rgba(20,255,236,.055),transparent 58%),#050808}
+.game-arena-grid{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(20,255,236,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(20,255,236,.055) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(ellipse at center,#000,transparent 85%)}
+.game-arena.is-playing{cursor:crosshair}
+.game-start-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px 20px}
+.game-emblem{display:grid;place-items:center;width:66px;height:66px;margin-bottom:22px;border:1px solid rgba(20,255,236,.38);border-radius:50%;color:var(--cyan);font-size:31px;box-shadow:0 0 45px rgba(20,255,236,.12),inset 0 0 25px rgba(20,255,236,.08);animation:gameFloat 3s ease-in-out infinite}
+.game-start-card .eyebrow{margin-bottom:12px;font-size:8px}
+.game-start-card h3{margin:0;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.065em;line-height:1}
+.game-start-card>p:not(.eyebrow){max-width:380px;margin:13px 0 24px;color:#829090;font-size:.85rem;line-height:1.65}
+.game-start-button{min-height:47px;padding:0 22px;border:1px solid var(--cyan);background:var(--cyan);color:#00100e;font:500 9px "DM Mono",monospace;letter-spacing:.12em;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s}
+.game-start-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,255,236,.18)}
+.game-orb{position:absolute;z-index:3;display:grid;place-items:center;width:58px;height:58px;padding:0;border:1px solid rgba(20,255,236,.95);border-radius:50%;background:radial-gradient(circle at 35% 30%,#eaffff 0,#14ffec 18%,rgba(20,255,236,.3) 52%,rgba(20,255,236,.05) 72%);box-shadow:0 0 16px rgba(20,255,236,.8),0 0 45px rgba(20,255,236,.4),inset 0 0 15px rgba(255,255,255,.65);color:#00201c;cursor:pointer;transform:translate(-50%,-50%);animation:orbAppear .18s var(--ease),gamePulse .8s infinite alternate}
+.game-orb span{font-size:24px;text-shadow:0 0 12px #fff}
+.game-orb:hover{filter:brightness(1.2)}
+.game-corner{position:absolute;font-size:7px;color:#455454}
+.game-corner-tl{top:17px;left:18px}.game-corner-tr{top:17px;right:18px}.game-corner-bl{bottom:17px;left:18px}.game-corner-br{bottom:17px;right:18px}
+.game-foot{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-top:1px solid var(--line);font-size:7px}
+.game-foot>span:first-child{display:flex;align-items:center;gap:8px;color:#a0adad}
+.game-foot i{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+@keyframes gameFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(8deg)}}
+@keyframes gamePulse{from{filter:brightness(.92)}to{filter:brightness(1.25)}}
+@keyframes orbAppear{from{opacity:0;scale:.5}to{opacity:1;scale:1}}
+@media(max-width:560px){
+  .game-section{padding:80px 16px}
+  .game-hud>div{align-items:flex-start;flex-direction:column;gap:8px;padding:13px 10px}
+  .game-hud span{font-size:6px;letter-spacing:.08em}
+  .game-hud strong{font-size:20px}
+  .game-arena{height:390px}
+  .game-corner{font-size:6px;letter-spacing:.08em}
+  .game-corner-tl,.game-corner-bl{left:10px}.game-corner-tr,.game-corner-br{right:10px}
+  .game-foot{flex-direction:column;gap:8px;padding:13px 12px}
+}
+@media(prefers-reduced-motion:reduce){.game-emblem,.game-orb{animation:none}}
