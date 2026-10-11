@@ -19,12 +19,14 @@ function randomFood(snake: Point[]): Point {
 
 export default function SnakeGame() {
   const [snake, setSnake] = useState<Point[]>(initialSnake);
-  const [food, setFood] = useState<Point>(() => ({ x: 13, y: 6 }));
+  const [food, setFood] = useState<Point>({ x: 13, y: 6 });
   const [direction, setDirection] = useState<Direction>("RIGHT");
   const [playing, setPlaying] = useState(false);
   const [over, setOver] = useState(false);
   const [score, setScore] = useState(0);
   const directionRef = useRef<Direction>("RIGHT");
+  const snakeRef = useRef<Point[]>(initialSnake);
+  const foodRef = useRef<Point>({ x: 13, y: 6 });
 
   const turn = useCallback((next: Direction) => {
     const current = directionRef.current;
@@ -36,8 +38,11 @@ export default function SnakeGame() {
 
   const start = useCallback(() => {
     const fresh = [...initialSnake];
+    const nextFood = randomFood(fresh);
+    snakeRef.current = fresh;
+    foodRef.current = nextFood;
     setSnake(fresh);
-    setFood(randomFood(fresh));
+    setFood(nextFood);
     setScore(0);
     directionRef.current = "RIGHT";
     setDirection("RIGHT");
@@ -70,31 +75,34 @@ export default function SnakeGame() {
   useEffect(() => {
     if (!playing) return;
     const timer = setInterval(() => {
-      setSnake((currentSnake) => {
-        const head = currentSnake[0];
-        const dir = directionRef.current;
-        const next: Point = {
-          x: head.x + (dir === "RIGHT" ? 1 : dir === "LEFT" ? -1 : 0),
-          y: head.y + (dir === "DOWN" ? 1 : dir === "UP" ? -1 : 0),
-        };
-        const eating = next.x === food.x && next.y === food.y;
-        const body = eating ? currentSnake : currentSnake.slice(0, -1);
-        if (next.x < 0 || next.x >= COLS || next.y < 0 || next.y >= ROWS ||
-            body.some((part) => part.x === next.x && part.y === next.y)) {
-          setPlaying(false);
-          setOver(true);
-          return currentSnake;
-        }
-        const moved = [next, ...currentSnake.slice(0, eating ? currentSnake.length : -1)];
-        if (eating) {
-          setScore((value) => value + 1);
-          setFood(randomFood(moved));
-        }
-        return moved;
-      });
+      const currentSnake = snakeRef.current;
+      const head = currentSnake[0];
+      const dir = directionRef.current;
+      const next: Point = {
+        x: head.x + (dir === "RIGHT" ? 1 : dir === "LEFT" ? -1 : 0),
+        y: head.y + (dir === "DOWN" ? 1 : dir === "UP" ? -1 : 0),
+      };
+      const currentFood = foodRef.current;
+      const eating = next.x === currentFood.x && next.y === currentFood.y;
+      const body = eating ? currentSnake : currentSnake.slice(0, -1);
+      if (next.x < 0 || next.x >= COLS || next.y < 0 || next.y >= ROWS ||
+          body.some((part) => part.x === next.x && part.y === next.y)) {
+        setPlaying(false);
+        setOver(true);
+        return;
+      }
+      const moved = [next, ...currentSnake.slice(0, eating ? currentSnake.length : -1)];
+      snakeRef.current = moved;
+      setSnake(moved);
+      if (eating) {
+        setScore((value) => value + 1);
+        const nextFood = randomFood(moved);
+        foodRef.current = nextFood;
+        setFood(nextFood);
+      }
     }, 145);
     return () => clearInterval(timer);
-  }, [playing, food]);
+  }, [playing]);
 
   const occupied = new Set(snake.map((part) => `${part.x},${part.y}`));
   const head = snake[0];
