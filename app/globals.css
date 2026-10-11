@@ -168,20 +168,28 @@ h1,h2,h3,p{overflow-wrap:break-word}
 .skill-copy p{margin:7px 0 13px;color:#758181;font-size:.76rem;line-height:1.45}
 .skill-track{height:2px;background:#202828;overflow:hidden}.skill-track span{display:block;height:100%;background:var(--cyan);box-shadow:0 0 13px rgba(20,255,236,.55);transition:width 1s var(--ease)}
 
-/* WORK */
-.work{border-top:1px solid var(--line)}
-.work-intro{margin-bottom:55px}
-.project-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.project-card{position:relative;min-height:520px;overflow:hidden;border:1px solid var(--line);background:#0a0d0d;perspective:900px}
-.project-image,.project-image img{width:100%;height:100%;min-height:520px}
-.project-image img{object-fit:cover;transition:transform .9s var(--ease),filter .6s}
-.project-card:hover .project-image img{transform:scale(1.055);filter:brightness(1.08) saturate(1.08)}
-.project-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.9) 100%)}
-.project-info{position:absolute;z-index:2;left:25px;right:25px;bottom:22px;display:flex;align-items:end;justify-content:space-between;gap:20px}
+/* WORK — compact, punchy project bento */
+.work{position:relative;border-top:1px solid var(--line);overflow:hidden}
+.work:before{content:"";position:absolute;top:5%;right:-170px;width:360px;height:360px;border:1px solid rgba(20,255,236,.08);border-radius:50%;pointer-events:none}
+.work-intro{margin-bottom:30px;align-items:end}
+.work-intro h2{max-width:650px}
+.work-intro>p:last-child{max-width:390px;padding-bottom:8px}
+.project-grid{position:relative;max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.project-card{position:relative;display:block;height:clamp(245px,25vw,340px);min-height:0;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:3px;background:#0a0d0d;isolation:isolate;perspective:900px;transition:border-color .4s,transform .5s var(--ease),box-shadow .5s var(--ease)}
+.project-image,.project-image img{display:block;width:100%;height:100%;min-height:0}
+.project-image img{object-fit:cover;object-position:top center;transition:transform .9s var(--ease),filter .6s}
+.project-card:before{content:"";position:absolute;z-index:1;inset:0;border:1px solid transparent;background:linear-gradient(135deg,rgba(20,255,236,.15),transparent 45%,rgba(20,255,236,.05));opacity:0;pointer-events:none;transition:opacity .4s}
+.project-card:hover{border-color:rgba(20,255,236,.55);transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.28),0 0 25px rgba(20,255,236,.05)}
+.project-card:hover:before{opacity:1}
+.project-card:hover .project-image img{transform:scale(1.045);filter:brightness(1.08) saturate(1.08)}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 25%,rgba(0,0,0,.88) 100%)}
+.project-info{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;display:flex;align-items:end;justify-content:space-between;gap:14px}
 .project-info small{color:var(--cyan);font:500 8px "DM Mono",monospace;letter-spacing:.14em}
-.project-info h3{margin:7px 0 3px;font-size:1.45rem;letter-spacing:-.035em}.project-info p{margin:0;color:#8a9696;font-size:.75rem}
-.project-info>span{color:#a9b4b4;font:500 8px "DM Mono",monospace;letter-spacing:.12em}.project-info>span b{color:var(--cyan);font-size:14px}
-.project-card-1{grid-column:1/2}.project-card-2{grid-column:2/3}.project-card-3{grid-column:1/3;min-height:620px}.project-card-3 .project-image,.project-card-3 .project-image img{min-height:620px}.project-card-4{grid-column:1/3;min-height:620px}.project-card-4 .project-image,.project-card-4 .project-image img{min-height:620px}
+.project-info h3{margin:6px 0 3px;font-size:clamp(1.1rem,1.8vw,1.45rem);letter-spacing:-.035em}.project-info p{margin:0;color:#b0baba;font-size:.72rem}
+.project-info>span{flex:0 0 auto;display:flex;align-items:center;gap:7px;color:#d7e0df;font:500 8px "DM Mono",monospace;letter-spacing:.12em}
+.project-info>span b{display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(20,255,236,.4);border-radius:50%;color:var(--cyan);font-size:14px;transition:background .3s,color .3s,transform .3s}
+.project-card:hover .project-info>span b{background:var(--cyan);color:#00100e;transform:rotate(45deg)}
+.project-card-1{grid-column:auto}.project-card-2{grid-column:auto}.project-card-3{grid-column:auto;min-height:0}.project-card-3 .project-image,.project-card-3 .project-image img{min-height:0}.project-card-4{grid-column:auto;min-height:0}.project-card-4 .project-image,.project-card-4 .project-image img{min-height:0}
 
 /* SNAPSHOTS */
 .snapshots{background:#050707}
@@ -245,7 +253,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
   .hero{grid-template-columns:1fr;padding:125px 22px 70px}.hero-content{max-width:720px}.hero h1{font-size:clamp(3.2rem,10vw,6rem)}.hero-visual{height:570px;min-height:0;margin-top:25px}.hero-meta{margin-top:40px}
   .split-intro{grid-template-columns:1fr;gap:28px}.split-intro>p:last-child{max-width:600px}
   .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:300px 300px 300px}.photo-card-1{grid-column:1;grid-row:1/3}.photo-card-2{grid-column:2;grid-row:1}.photo-card-3{grid-column:2;grid-row:2}.photo-card-4{grid-column:1;grid-row:3}.photo-card-5{grid-column:2;grid-row:3}
-  .skills-grid,.blog-grid,.project-grid{grid-template-columns:1fr}.project-card-1,.project-card-2,.project-card-3,.project-card-4{grid-column:1;min-height:460px}.project-card-1 .project-image,.project-card-1 .project-image img,.project-card-2 .project-image,.project-card-2 .project-image img,.project-card-3 .project-image,.project-card-3 .project-image img,.project-card-4 .project-image,.project-card-4 .project-image img{min-height:460px}
+  .skills-grid,.blog-grid,.project-grid{grid-template-columns:1fr}.project-card-1,.project-card-2,.project-card-3,.project-card-4{grid-column:1;height:clamp(260px,58vw,390px);min-height:0}.project-card-1 .project-image,.project-card-1 .project-image img,.project-card-2 .project-image,.project-card-2 .project-image img,.project-card-3 .project-image,.project-card-3 .project-image img,.project-card-4 .project-image,.project-card-4 .project-image img{min-height:0}
   .snapshot-grid{grid-template-columns:1fr 1fr}.snapshot-item img{height:360px}
   .footer-grid{grid-template-columns:1fr;gap:60px;margin-top:80px;margin-bottom:90px}.footer-orbit{right:0;top:45px;width:100px;height:100px}
 }
@@ -257,7 +265,7 @@ h1,h2,h3,p{overflow-wrap:break-word}
   .photo-grid{gap:8px;grid-template-rows:245px 245px 245px}.photo-caption{left:11px;right:11px;bottom:11px;gap:7px}.photo-caption span{font-size:.68rem}.photo-open{display:none}
   .blog-card{min-height:270px;padding:22px}.blog-body h3{font-size:1.35rem}
   .skill-card{grid-template-columns:24px 45px 1fr;gap:10px;padding:17px}.skill-mark{width:42px;height:42px;font-size:10px}.skill-heading h3{font-size:.9rem}.skill-copy p{font-size:.7rem}
-  .project-card-1,.project-card-2,.project-card-3,.project-card-4{min-height:390px}.project-card-1 .project-image,.project-card-1 .project-image img,.project-card-2 .project-image,.project-card-2 .project-image img,.project-card-3 .project-image,.project-card-3 .project-image img,.project-card-4 .project-image,.project-card-4 .project-image img{min-height:390px}.project-info{left:17px;right:17px;bottom:17px}.project-info h3{font-size:1.2rem}
+  .project-card-1,.project-card-2,.project-card-3,.project-card-4{height:270px;min-height:0}.project-card-1 .project-image,.project-card-1 .project-image img,.project-card-2 .project-image,.project-card-2 .project-image img,.project-card-3 .project-image,.project-card-3 .project-image img,.project-card-4 .project-image,.project-card-4 .project-image img{min-height:0}.project-info{left:14px;right:14px;bottom:14px}.project-info h3{font-size:1.1rem}
   .snapshot-grid{gap:8px}.snapshot-item img{height:260px}.snapshot-open{display:none}
   .lightbox{padding:58px 52px 18px}.lightbox-frame{width:100%;max-height:82vh}.lightbox-frame img{max-height:72vh}.lightbox-frame>div{font-size:6px}.lightbox-arrow{display:inline-flex;width:42px;height:42px}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-close{top:12px;right:12px;min-width:70px;height:38px}
   .moments-lightbox{padding:58px 52px 18px}.moments-lightbox-frame{width:100%;max-height:82vh}.moments-lightbox-frame img{max-height:72vh}.moments-lightbox-frame>div{font-size:6px}.moments-lightbox-arrow{display:inline-flex;width:42px;height:42px}.moments-lightbox-prev{left:8px}.moments-lightbox-next{right:8px}.moments-lightbox-close{top:12px;right:12px;min-width:70px;height:38px}
